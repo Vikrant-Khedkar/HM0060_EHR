@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,500&display=swap');
+
+.wholeCont{
+    position: fixed;
+    width: calc(100% - 7px);
+    width: 100%;
+    height: 10vh;
+    background-color: #FDC8C8;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    background: #5433FF;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #A5FECB, #20BDFF, #5433FF);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #A5FECB, #20BDFF, #5433FF);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.logoCont{
+    min-width: 30%;
+    max-width: 100%;
+    height: 100%;
+    gap: 3vh;
+    padding-left: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logoImg{
+    height: 70%;
+    width: auto;
+    border-radius: 50%;
+}
+
+.logoTitle{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #383838;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.menuCont{
+    position: absolute;
+    min-width: 45%;
+    max-width: 100%;
+    height: 10vh;
+    right: 0;
+    gap: 2vh;
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.menuContMenuOpen {
+    
+    display: flex;
+}
+
+.menuOptions {
+    width: max-content;
+    height: auto;
+    cursor: pointer;
+}
+
+.menuOptionsText{
+    width: max-content;
+    height: auto;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    margin: 0;
+    user-select: none;
+    white-space: nowrap;
+}
+.menuCloseBtnCont{
+    position: absolute;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 5px;
+    top: 2vh;
+    right: 5vh;
+    border: 1px solid white;
+    gap: 1vh;
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.menuCloseBtnContMenuOpen{
+    right: 5vh;
+    z-index: 11;
+}
+
+.endLines{
+    width: 4vh;
+    height: 2px;
+    color: #FFFFFF;
+    margin: 0;
+}
+.endLinesMenuOpen1{
+    position: absolute;
+    transform: rotate(45deg);
+}
+.endLinesMenuOpen2{
+    position: absolute;
+    transform: rotate(-45deg);
+}
+
+.midLine{
+    width: 4vh;
+    height: 2px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.midLineMenuOpen{
+    display: none;
+}
+
+@keyframes menuSlideOpen {
+    0%{
+        right: -100%;
+    }
+    100%{
+        right: 0%;
+    }
+}
+
+@keyframes menuSlideClose {
+    0% {
+        right: 0%;
+    }
+
+    100% {
+        right: -100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .logoTitle{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .menuCont{
+        position: fixed;
+        min-width: 55%;
+        max-width: 90%;
+        height: 100vh;
+        top: 0;
+        padding-top: 20vh;
+        background-color: rgba(0,0,0,0.75);
+        /* background-color: #FDC8C8; */
+        flex-direction: column;
+        justify-content: flex-start;
+        /* animation: menuSlideOpen 0.5s forwards ease-in-out; */
+    }
+    .menuCloseBtnCont{
+        display: flex;
+    }
+    .menuContMenuOpen{
+        animation: menuSlideOpen 0.5s forwards ease-in-out;
+    }
+    .menuContMenuClose{
+        animation: menuSlideClose 0.5s forwards ease-in-out;
+    }
+    .menuOptions{
+        width: 100%;
+        padding: 5vh 2vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .menuOptions:hover{
+        background-color: #FFFFFF;
+        background-color: rgba(0,0,0,0.75);
+    }
+    .menuOptionsText{
+        color: aliceblue;
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    /* .menuOptionsText:hover{
+        color: #000000;
+    } */
+}

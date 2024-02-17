@@ -1,0 +1,172 @@
+.wholeCont{
+    width: 95%;
+    min-height: 90vh;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.inputCont{
+    position: relative;
+    width: 50vh;
+    min-height: 8vh;
+    border: 2px solid #535353;
+    margin: 1.5vh 0;
+    border-radius: 5px;
+    background-color: #c7edf0;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.inputContClicked{
+    border: 2px solid #278a91;
+}
+
+.inputTitle{
+    position: absolute;
+    width: max-content;
+    padding: 0 1vh;
+    margin: 0;
+    color: #535353;
+    font-weight: 500;
+    background-color: #c7edf0;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.inputTitleClicked{
+    animation: inputTitleSlide 1s forwards ease-in-out;
+}
+
+.inputBox{
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    text-indent: 1vh;
+    color: #535353;
+    background-color: #c7edf0;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+}
+
+.addButton{
+    position: absolute;
+    width: max-content;
+    height: auto;
+    padding: 1vh 2vh;
+    font-size: 1rem;
+    background-color: green;
+    border: none;
+    border-radius:5px;
+    outline: none;
+    left: 105%;
+    cursor: pointer;
+}
+.addButton:active{
+    padding: 0.75vh 1.5vh;
+    margin: 0 0.5vh;
+}
+
+.textBox{
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 20vh;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-indent: 1vh;
+    color: #535353;
+    background-color: #c7edf0;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+}
+
+.testsListCont{
+    width: 100%;
+    height: auto;
+    padding: 1vh;
+    margin: 1vh;
+    min-height: 0;
+    border-radius: 12px;
+    background-color: #c7edf0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.testsTitle{
+    width: 10vh;
+    font-size: 1rem;
+    border-bottom: 2px solid #278a91;
+    white-space: nowrap;
+    color: #535353;
+    font-weight: 500;
+    margin: 0;
+
+}
+
+.eachTestAdvisedCont{
+    position: relative;
+    width: 100%;
+    min-height: 5vh;
+    border: 2px solid #278a91;
+    border-radius: 12px;
+    margin: 1vh 0;
+    padding: 1vh;
+    display: flex;
+    align-items: center;
+}
+
+.eachTestAdvised{
+    font-size: 1rem;
+    margin: 0;
+    color: #535353;
+}
+
+.eachTestAdvisedCross{
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+    border: 1px solid red;
+    border-radius: 50%;
+    /* color: red; */
+    background-color: red;
+    right: -2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.eachTestAdvisedCross:active{
+    font-size: 1rem;
+}
+
+.errorMsg{
+    font-size: 0.75rem;
+    margin: 0;
+    color: rgb(216, 33, 33);
+}
+
+@keyframes inputTitleSlide {
+    0%{
+        font-size: 1rem;
+        background-color: transparent;
+        top: 2vh;
+        left: 0;
+    }
+    100%{
+        font-size: 0.9rem;
+        top: -2vh;
+        left: 1vh;
+    }
+}

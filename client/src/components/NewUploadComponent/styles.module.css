@@ -1,0 +1,222 @@
+.wholeCont {
+    width: 99.5vw;
+    height: 100vh;
+    display: flex;
+}
+
+.rightCont {
+    padding: 0 2.5vh;
+    width: 85%;
+    height: 100vh;
+}
+
+.rightBottomCont {
+    width: 100%;
+    height: 90vh;
+    border-radius: 5px;
+}
+
+.innerForm {
+    position: relative;
+    width: 101%;
+    height: 100%;
+    right: 0.5%;
+    padding-top: 4vh;
+    background-color: #F2EAE5;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.inputBoxCont {
+    position: relative;
+    width: 70%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.redDot {
+    width: 2vh;
+    height: 2vh;
+    margin-left: 2vh;
+    border-radius: 50%;
+    background-color: #FF2147;
+}
+
+.inputHeader {
+    width: 25%;
+    height: auto;
+    margin: 0;
+    margin-left: 2vh;
+    font-size: 1rem;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.inputCont {
+    position: relative;
+    width: 80%;
+    height: 7vh;
+    margin: 1.5vh 0;
+    border-radius: 25px;
+    background-color: #E4E6EA;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.inputContWrong {
+    border: 2px solid red;
+}
+
+.inputContRight {
+    border: 2px solid #61ad22;
+}
+
+.inputTitle {
+    position: absolute;
+    width: max-content;
+    padding: 0 1vh;
+    margin: 0;
+    left: 1vh;
+    cursor: text;
+    color: #535353;
+    font-weight: 500;
+    border-radius: 2.5px;
+}
+
+.inputTitleClicked {
+    animation: inputTitleSlide 0.15s forwards ease-in-out;
+}
+
+.inputBox {
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    text-indent: 2vh;
+    color: #535353;
+    border-radius: 25px;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+}
+
+.fileInputCont {
+    position: absolute;
+    width: 72%;
+    height: 30vh;
+    background-color: #ffffff;
+    top: 2vh;
+    right: 0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.uploadImg {
+    height: 80%;
+    width: auto;
+}
+
+.uploadInput {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+.showFileCont {
+    position: absolute;
+    width: 72%;
+    height: 30vh;
+    /* background-color: #E4E6EA; */
+    top: 2vh;
+    right: 0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.uploadButton {
+    position: absolute;
+    bottom: 3vh;
+    padding: 2vh 5vh;
+    width: max-content;
+    height: auto;
+    font-size: 1rem;
+    background-color: #b30000;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+@keyframes inputTitleSlide {
+    0% {
+        font-size: 1rem;
+        background-color: transparent;
+        top: 2vh;
+        left: 1vh;
+        background-color: transparent;
+    }
+    99% {
+        background-color: transparent;
+    }
+    100% {
+        font-size: 0.9rem;
+        top: -2vh;
+        left: 1.5vh;
+        /* background-color: #ffffff; */
+        background-color: transparent;
+    }
+}
+
+@media (max-width: 850px) {
+    .inputBoxCont {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .rightCont {
+        width: calc(100% - 12vh);
+    }
+}
+
+@media (max-width: 700px) {
+    .inputBoxCont {
+        align-items: center;
+        justify-content: center;
+    }
+    .redDot {
+        display: none;
+    }
+    .inputHeader {
+        display: none;
+    }
+    .fileInputCont {
+        position: relative;
+        top: 12vh;
+        width: 80%;
+    }
+    .showFileCont {
+        position: relative;
+        flex-direction: column;
+        top: 12vh;
+    }
+}
+
+@media (max-width: 425px) {
+    .rightCont {
+        width: 100%;
+    }
+    .uploadButton {
+        margin-bottom: 10vh;
+    }
+}

@@ -1,0 +1,185 @@
+.wholeCont {
+    width: 99.5vw;
+    height: 80vh;
+    display: flex;
+}
+
+.rightCont {
+    padding: 0 2.5vh;
+    width: 85%;
+    height: 90vh;
+}
+
+.rightBottomCont {
+    width: 100%;
+    height: 90vh;
+    
+    border-radius: 5px;
+}
+
+.innerForm {
+    position: relative;
+    width: 101%;
+    height: 100%;
+    right: 0.5%;
+    padding-top: 4vh;
+    background-color: #F2EAE5;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.rightBottomTopCont {
+    width: 90%;
+    height: 20vh;
+    margin: 0 5%;
+    overflow-x: auto;
+    gap: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* width */
+.rightBottomTopCont::-webkit-scrollbar {
+    height: 5px;
+}
+
+/* Track */
+.rightBottomTopCont::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+.rightBottomTopCont::-webkit-scrollbar-thumb {
+    background: rgb(134, 134, 134);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.rightBottomTopCont::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+}
+
+.eachYearFolderCont {
+    position: relative;
+    width: max-content;
+    height: 100%;
+    cursor: pointer;
+    background-image: url('../../../public/folderImg.png');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eachYearFolderCont:hover .eachYearFolderImg {
+    opacity: 0.9;
+}
+
+.eachYearFolderImg {
+    height: 90%;
+    width: 300px;
+}
+
+.yearText {
+    /* position: absolute; */
+    width: 110px;
+    height: auto;
+    margin: 0;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.rightBottomBottomCont {
+    width: 90%;
+    height: 70%;
+    margin-top: 2.5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* width */
+.rightBottomBottomCont::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.rightBottomBottomCont::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+.rightBottomBottomCont::-webkit-scrollbar-thumb {
+    background: rgb(134, 134, 134);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.rightBottomBottomCont::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+}
+
+.eachMonthCont {
+    width: 23%;
+    height: 20%;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    padding-left: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.eachMonthCont:hover {
+    box-shadow:  0px 14px 8px 0 rgba(0, 0, 0, 0.25)
+}
+
+.eachMonthCont:hover .dot {
+    background-color: green;
+}
+
+.dot {
+    width: 2.5vh;
+    height: 2.5vh;
+    background-color: #b30000;
+    border-radius: 50%;
+}
+
+.monthText {
+    font-size: 1rem;
+    margin: 0;
+    margin-left: 2vh;
+    color: #000000;
+}
+
+@media (max-width: 768px) {
+    .rightCont {
+        width: calc(100% - 12vh);
+    }
+    .eachMonthCont {
+        width: 30vh;
+        height: 10vh;
+        margin: 1vh 0.5vh;
+    }
+}
+
+@media (max-width: 425px) {
+    .rightCont {
+        width: 100%;
+    }
+    .eachMonthCont {
+        width: 45%;
+        min-width: 20vh;
+    }
+}

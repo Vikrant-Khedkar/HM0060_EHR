@@ -14,29 +14,28 @@ const uploadFile = async (_file, _fileName) => {
 
     const fileName = _fileName;
     const fileStream = fs.createReadStream(file.path);
-
-    const fileAdded = await new Promise((resolve, reject) => {
-      const ipfsFileObj = {
-        path: fileName,
-        content: fileStream,
-      };
-
-      ipfs.add(ipfsFileObj, (err, result) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(result);
-        }
-      });
+    const formData = new FormData();
+    formData.append('file',file) 
+    try{
+    const resFile = await axios({
+      method: "post",
+      url: "https://api.pinata.cloud/pinning/pinFileToIPFS",
+      data: formData,
+      headers: {
+        pinata_api_key: process.env.PINATA_API_KEY,
+        pinata_secret_api_key: process.env.PINATA_SECRET_API,
+        "Content-Type": "multipart/form-data",
+      },
     });
-
-    fs.unlink(file.path, (err) => {
-      if (err) console.log(err);
-    });
+  }
+  catch(error){
+    console.error("Error uploading to IPFS",error)
+  }
+    const ImgHash = `https://gateway.pinata.cloud/ipfs/${resFile.data.IpfsHash}`;
 
     const fileHash = fileAdded[0].hash;
     const fileUrl = `ipfs://${fileHash}`;
-    return (fileUrl);
+    return (ImgHash);
 
     // res.send({ url, fileName, fileHash });
     console.log(url, fileName, fileHash);

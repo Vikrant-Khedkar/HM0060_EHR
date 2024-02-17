@@ -10189,10 +10189,17 @@
       "links": {},
       "address": "0x96CCA4e1b21F1507611316Bf0a18681851cdb9F5",
       "transactionHash": "0xb986cd6dd9032f57a28dd3fbcb6f1cbbee20c7655d3a372dd239a87dc0974a47"
+    },
+    "11155111": {
+      "events": {},
+      "links": {},
+      "address": "0x1fff1024bB2874b0a098e3049Ff062078e347F44",
+      "transactionHash": "0x9fb9a7b1b5c9a172bb83d50009a247f8645f573503c895d73e988f66faafc532"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-02-17T19:40:44.291Z",
+  "updatedAt": "2024-02-17T21:28:04.794Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {}
   },

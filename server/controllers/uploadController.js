@@ -1,48 +1,32 @@
 const fs = require("fs");
-const dotenv = require('dotenv');
-dotenv.config();
-const { url } = require("inspector");
-const ipfsAPI = require("ipfs-api");
-const ipfs = ipfsAPI(process.env.IPFS_API);
+const FormData = require("form-data");
+const axios = require("axios");
 
 const uploadFile = async (_file, _fileName) => {
   try {
     const file = _file;
-    console.log("________________________________________________________________")
-    console.log(file);
-    console.log("________________________________________________________________")
-
     const fileName = _fileName;
-    const fileStream = fs.createReadStream(file.path);
+    console.log("PINATA_API_KEY:", "hello");
+    console.log("PINATA_SECRET_API_KEY:", "you");
+    const formData = new FormData();
 
-    const fileAdded = await new Promise((resolve, reject) => {
-      const ipfsFileObj = {
-        path: fileName,
-        content: fileStream,
-      };
+    formData.append('file', fs.createReadStream(file.path), fileName);
 
-      ipfs.add(ipfsFileObj, (err, result) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(result);
-        }
-      });
+    const resFile = await axios.post("https://api.pinata.cloud/pinning/pinFileToIPFS", formData, {
+      headers: {
+        pinata_api_key: process.env.PINATA_API_KEY,
+        pinata_secret_api_key: process.env.PINATA_SECRET_API_KEY,
+        ...formData.getHeaders(), 
+      },
     });
 
-    fs.unlink(file.path, (err) => {
-      if (err) console.log(err);
-    });
+    console.log(resFile.data);
 
-    const fileHash = fileAdded[0].hash;
-    const fileUrl = `ipfs://${fileHash}`;
-    return (fileUrl);
-
-    // res.send({ url, fileName, fileHash });
-    console.log(url, fileName, fileHash);
+    console.log(`https://gateway.pinata.cloud/ipfs/${resFile.data.IpfsHash}`)
+    return `https://gateway.pinata.cloud/ipfs/${resFile.data.IpfsHash}`;
   } catch (error) {
-    console.error("Error uploading file:", error);
-    // res.status(500).send("Internal Server Error");
+    console.error("Error uploading file to IPFS:", error);
+    throw error;
   }
 };
 

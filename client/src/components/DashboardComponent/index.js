@@ -12,13 +12,14 @@ import DashboardTopNavBar from '../DashboardTopNavBar';
 export default function DashboardComponent () {
 
     const fileURL = `${routes.baseUrl}${routes.api.files}`;
-    // const fileURL = 'http://localhost:5000/getRecords';
     
     const router = useRouter();
 
     const {user_address} = useSelector(store => store.metamaskLogin)
 
     const [docs, setDocs] = useState([]);
+    const [showFile, setShowFile] = useState(false);
+    const [url, setUrl] = useState(null);
 
     useEffect(() => {
         if(user_address === null)
@@ -48,6 +49,11 @@ export default function DashboardComponent () {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             </Head>
             <DashboardLeftNavBar />
+            {
+            showFile && url && <div className={styles.modalCont} onClick={e => setShowFile(false)}>
+                    <iframe src={url} className={styles.modalContent} onClick={e=> e.stopPropagation()}/>
+                </div>
+            }
             <div className={styles.rightCont} >
                 <DashboardTopNavBar pageTitle='Dashboard' pageTitleImg='dashboardIcon'/>
                 <div className={styles.rightBottomCont} >
@@ -63,14 +69,12 @@ export default function DashboardComponent () {
                         {
                             docs?.map((eachDoc) => {
                                 return (
-                                    <Link key={eachDoc} href={`${eachDoc.file}`} legacyBehavior>
-                                        <a target='_blank' className={styles.eachDocCont}>
+                                    <div key={eachDoc} onClick = {e => {setUrl(eachDoc.file), setShowFile(true)}}  className={styles.eachDocCont}>
                                             <img src='/docIcon.png' alt={eachDoc.filename}
                                                 className={styles.eachDocImg}
                                             />
                                             <h3 className={styles.eachDocTitle}>{eachDoc.filename}</h3>
-                                        </a>
-                                    </Link>
+                                    </div>
                                 )
                             })
                         }

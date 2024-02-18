@@ -19,7 +19,8 @@ export default function NewUploadComponent () {
     const [selected, setSelected] = useState('recordName');
 
     const [uploaded, setUploaded] = useState();
-    const [url , setUrl] = useState('');
+    const [url , setUrl] = useState('https://gateway.pinata.cloud/ipfs/QmRXZZ6a483BgQuTFbxzeYVX76DHQMkMtTkZcwfEV31WBc');
+    const [showFile, setShowFile] = useState(false);
     const [fileName, setFileName] = useState('');
     const [fileHash, setFileHash] = useState('');
 
@@ -50,13 +51,14 @@ export default function NewUploadComponent () {
             setUrl(resp.data.Data[5]);
             setFileName(resp.fileName);
             setFileHash(fileHash);
+            setShowFile(true);
         })
-        .then(() => {
-            if(window !== undefined){
-                console.log(url);
-                window.open(url, '_self');
-            }
-        })
+        // .then(() => {
+        //     if(window !== undefined){
+        //         console.log(url);
+        //         window.open(url, '_self');
+        //     }
+        // })
         .catch(err => console.log(err));
     }
 
@@ -74,6 +76,11 @@ export default function NewUploadComponent () {
 
     return (
         <div className={styles.wholeCont} >
+            {
+            showFile && url && <div className={styles.modalCont} onClick={e => setShowFile(false)}>
+                    <iframe src={url} className={styles.modalContent} onClick={e=> e.stopPropagation()}/>
+                </div>
+            }
             <DashboardLeftNavBar />
             <div className={styles.rightCont} >
                 <DashboardTopNavBar pageTitle='Add Records' pageTitleImg='addRecordsIcon'/>

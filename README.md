@@ -21,11 +21,11 @@ A decentralized EHR system to store and manage personal health care records on E
 - Infura
 
 ## Screenshots
-![image](https://github.com/Vikrant-Khedkar/HM0060_EHR/assets/64966091/dee3c903-acd4-4971-9f3e-580d18c52bdf)
-![image](https://github.com/Vikrant-Khedkar/HM0060_EHR/assets/64966091/6370fc62-e310-4c5d-ad2c-d9a2ba41c791)
+![image](https://github.com/Vikrant-Khedkar/HM0060_EHR/assets/64966091/c804feaf-5a69-45be-ac98-5e434dab459a)
+![image](https://github.com/Vikrant-Khedkar/HM0060_EHR/assets/64966091/e5ec0d1a-54f3-4ab3-b293-e23f54c06614)
+
 ![image](https://github.com/Vikrant-Khedkar/HM0060_EHR/assets/64966091/35ca5f5f-c245-42f0-8ba2-cb943cfc0636)
 ![image](https://github.com/Vikrant-Khedkar/HM0060_EHR/assets/64966091/38bbec33-14a5-451f-ab6e-d5f4bb4dcc8a)
-![image](https://github.com/Vikrant-Khedkar/HM0060_EHR/assets/64966091/ac06bb51-2afe-409d-8245-b9c180048f71)
 ![image](https://github.com/Vikrant-Khedkar/HM0060_EHR/assets/64966091/5fc7708f-8ce1-4c0b-a1f2-b21042a755a6)
 
 

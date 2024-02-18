@@ -6,7 +6,7 @@ const routes = {
     api : {
         login : '/login',
         signup : '/signup',
-        upload : '/addrecord',
+        upload : '/addRecord',
         search : '/search',
         files : '/getRecords'
     }

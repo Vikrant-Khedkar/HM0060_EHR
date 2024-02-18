@@ -53,7 +53,7 @@ export default function DashboardTopNavBar ({pageTitle, pageTitleImg}) {
             </div>
             <div className={styles.rightTopRightCont} >
                 <img className={styles.rightTopRightImg} src='/loginImg.png'/>
-                <p className={styles.rightTopLeftText2}>{'Name'}</p>
+                <p className={styles.rightTopLeftText2}>{'John'}</p>
             </div>
         </div>
     )

@@ -81,6 +81,7 @@ export default function NewUploadComponent () {
                     <iframe src={url} className={styles.modalContent} onClick={e=> e.stopPropagation()}/>
                 </div>
             }
+            
             <DashboardLeftNavBar />
             <div className={styles.rightCont} >
                 <DashboardTopNavBar pageTitle='Add Records' pageTitleImg='addRecordsIcon'/>

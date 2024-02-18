@@ -58,7 +58,7 @@ export default function DashboardComponent () {
                 <DashboardTopNavBar pageTitle='Dashboard' pageTitleImg='dashboardIcon'/>
                 <div className={styles.rightBottomCont} >
                     <div className={styles.rightBottomLeftCont} >
-                        <p className={styles.nameText}>Hello {'Name'}</p>
+                        <p className={styles.nameText}>Hello {'John'}</p>
                     </div>
                     <div className={styles.rightBottomRightCont} >
                         <div className={styles.rightBottomRightBottomCont} >

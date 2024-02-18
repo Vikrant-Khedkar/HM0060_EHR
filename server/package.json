@@ -10,6 +10,7 @@
   "author": "vikrant",
   "license": "ISC",
   "dependencies": {
+    "@metamask/detect-provider": "^2.0.0",
     "axios": "^1.6.0",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
@@ -22,6 +23,6 @@
     "multer": "^1.4.5-lts.1",
     "nodemon": "^3.0.1",
     "uuid": "^9.0.1",
-    "web3": "^4.2.1"
+    "web3": "^4.5.0"
   }
 }

@@ -26,14 +26,15 @@ export default function DashboardComponent () {
     },[])
 
     useEffect(() => {
-        axios.get(fileURL)
+        axios.post(fileURL,  {userAddress : user_address})
         .then(resp => {
             setDocs(resp.data.records);
+            console.log(resp.data.records);
         })
         .catch(err => {
             console.log("Error: ",err.message);
         })
-    },[]);
+    },[user_address]);
 
     return (
         <div className={styles.wholeCont} >

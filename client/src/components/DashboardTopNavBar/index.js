@@ -17,17 +17,17 @@ export default function DashboardTopNavBar ({pageTitle, pageTitleImg}) {
     const [searchInput, setSearchInput] = useState('');
     const [dropDown, setDropDown] = useState([]);
 
-    const response = useMemo(() => {
-        axios.post(searchURL , searchInput,{
-            headers :{
-                "Content-Type" : "application/json"
-            }
-        })
-        .then((resp) => {
-            setDropDown(resp);
-        })
-        .catch(err => console.log("Error : ",err.message));
-    },[searchInput]);
+    // const response = useMemo(() => {
+    //     axios.post(searchURL , searchInput,{
+    //         headers :{
+    //             "Content-Type" : "application/json"
+    //         }
+    //     })
+    //     .then((resp) => {
+    //         setDropDown(resp);
+    //     })
+    //     .catch(err => console.log("Error : ",err.message));
+    // },[searchInput]);
 
     return (
         <div className={styles.rightTopCont} >

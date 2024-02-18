@@ -2,3 +2,5 @@
 /uploads
 /files
 .env
+
+request.rest

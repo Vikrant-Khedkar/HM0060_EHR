@@ -3,12 +3,13 @@ const dotenv = require('dotenv');
 dotenv.config();
 const { Web3 } = require("web3");
 const contractAbi = require("../PatientRecords.json");
-const web3 = new Web3(process.env.INFURA_RPC);
-const contractAddress = process.env.CONTRACT_ADDRESS;
+const web3 = new Web3(process.env.RPC);
+const contractAddress = process.env.L_CONTRACT_ADDRESS;
 const contract = new web3.eth.Contract(contractAbi.abi, contractAddress);
 
 const getRecords = async (req, res) => {
     try {
+        console.log(req.body);
         const userAddress = req.body.userAddress;
         console.log("this is the user address");
         console.log(userAddress);

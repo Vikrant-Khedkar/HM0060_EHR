@@ -3,8 +3,8 @@ dotenv.config()
 const { uploadFile } = require("./uploadController");
 const { Web3 } = require("web3");
 const contractAbi = require("../PatientRecords.json");
-const web3 = new Web3(process.env.INFURA_RPC);
-const contractAddress = process.env.CONTRACT_ADDRESS
+const web3 = new Web3(process.env.RPC);
+const contractAddress = process.env.L_CONTRACT_ADDRESS
 const contract = new web3.eth.Contract(contractAbi.abi, contractAddress);
 const crypto = require('crypto');
 const multer = require("multer")
@@ -44,7 +44,7 @@ const addRecord = async (req, res) => {
                 console.error("Error:", error);
             });
 
-        res.send({ "Message": "Added Record✨", "Data": data });
+        return res.send({ "Message": "Added Record✨", "Data": data });
         console.log("Added Record");
     } catch (error) {
         console.error(error);

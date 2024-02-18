@@ -32,11 +32,26 @@ A decentralized EHR system to store and manage personal health care records on E
 
 ## Deployed Url
 The project is based on Ethereum so you have to set up local Ganache node to run the project. 
-
 https://sepolia.etherscan.io/address/0x1fff1024bb2874b0a098e3049ff062078e347f44
+## Local Setup 
+- 1.Clone the project 
+- 2.Download Ganache and setup an environment
+- 3.Go inside the contract folder and enter npm install -g truffle
+- 4.Run truffle compile and then truffle deploy (make sure the truffle-config has correct ganache URLs)
+- 5.Once the contract is deployed copy the contract address and paste it inside the env file in place of L_CONTRACT_ADDRESS
+CONTRACT_ADDRESS = 0x1fff1024bB2874b0a098e3049Ff062078e347F44
+L_CONTRACT_ADDRESS = 0xB683c1389E488F42dd81e8A0C28D785CA4A26Ff2
+IPFS_API = /ip4/127.0.0.1/tcp/5001
+RPC = HTTP://127.0.0.1:7545 // Ganache url
+INFURA_API = 'https://sepolia.infura.io/v3/YOUR_API_KEY'
+PINATA_API_KEY = "KEY"
+PINATA_SECRET_API_KEY = "SECRET"
+- 6. Import a account from ganache in the metamask
+- 7. Then go inside the client and run yarn and then yarn dev
+- 8.Then in server run npm install and put the env file form above and run npm start then you are good to go.
 
 ## Video Url
-[Link to Demo Video](video_url)
+[Link to Demo Video](https://drive.google.com/file/d/1G5wTlxUuYusq-ePeL_1lQ_z6787SDEsx/view?usp=sharing)
 
 ## Remarks
-- 
+- 7620845369 contact if any issues

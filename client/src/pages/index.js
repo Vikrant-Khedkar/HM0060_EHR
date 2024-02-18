@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import DashboardComponent from '@/components/DashboardComponent'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <meta name="author" content="Shiva Kale, Vikrant Khedkar, Hritik Raj Aarya"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       </Head>
+      <DashboardComponent />
     </div>
   )
 }

@@ -2,8 +2,17 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import DashboardComponent from '@/components/DashboardComponent'
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
+
+  const { replace } = useRouter();
+
+  useEffect(() => {
+    replace('/dashboard');
+  },[])
+
   return (
     <div className={styles.wholeCont}>
       <Head>

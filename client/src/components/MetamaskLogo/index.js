@@ -1,53 +1,42 @@
-import React, {Component, useEffect, useRef} from 'react';
+import React, { useEffect } from 'react';
 import ModelViewer from '@metamask/logo';
+import styles from './styles.module.css';
 
-// class MetamaskLogo extends Component {
-//     ComponentDidMount() {
-//         this.viewer = ModelViewer({
-//             pxNotRation: true,
-//             width: 200,
-//             height: 200,
-//             followMouse : true
-//         });
-//         this.el.appendChild(this.viewer.container);
-//     }
-
-//     componentWillUnmount() {
-//         this.viewer.stopAnimation();
-//     }
-
-//     render() {
-//         return (
-//             <div ref={el => {this.el = el}} 
-//                 style={{position:'absolute',zIndex: '1000'}}
-//             />
-//         )
-//     }
-// }
-
-// export default MetamaskLogo;
-
-export default function MetamaskLogo() {
-
-    const el = useRef();
+const MetaMaskLogo = () => {
 
     useEffect(() => {
+        // Create ModelViewer instance
         const viewer = ModelViewer({
-            pxNotRatio : true,
-            width: 500+'px',
-            height: 500+'px',
-            followMouse: true,
+            pxNotRatio: false,
+            width: '100%',
+            height: 'auto',
+            followMouse: false,
+            slowDrift: false,
         });
-        el.current = viewer.container;
 
-        return(() => {
+        // Get the container element
+        const container = document.getElementById('logo-container');
+
+        // Add viewer to the DOM
+        container.appendChild(viewer.container);
+
+        // Look at something on the page
+        viewer.lookAt({
+            x: 0,
+            y: 0,
+        });
+
+        // Enable mouse follow
+        viewer.setFollowMouse(true);
+
+        // Deallocate resources
+        return () => {
             viewer.stopAnimation();
-        })
-    },[])
+            container.removeChild(viewer.container);
+        };
+    }, []);
 
-    return (
-        <div style={{}}>
+    return <div id="logo-container" className={styles.metamaskLogoCont} />;
+};
 
-        </div>
-    )
-}
+export default MetaMaskLogo;

@@ -69,10 +69,10 @@ export default function MetamaskLogin() {
                 <DashboardTopNavBar pageTitle='Login' pageTitleImg='loginMiniIcon' />
                 {user_address === null
                   ?
-                    <div className={styles.rightBottomCont} style={{position:"relative"}} onClick={metamaskAuthHandler} >
-                        {/* <MetamaskLogo /> */}
+                    <div className={styles.rightBottomCont} onClick={metamaskAuthHandler} >
+                        <MetamaskLogo />
                         <div className={styles.metamaskCont} >
-                            <div className={styles.metamaskImg}></div>
+                            {/* <div className={styles.metamaskImg}></div> */}
                             {/* <iframe src='https://metamask.github.io/logo/normal/index.html'  style={{width:'100%', height:'100%'}}
                             >
                             </iframe> */}

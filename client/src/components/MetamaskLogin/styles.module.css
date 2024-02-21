@@ -18,20 +18,13 @@
     height: 100vh;
 }
 
-.rightTopCont {
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .rightBottomCont {
     width: 100%;
     height: 90vh;
     border-radius: 5px;
     background-color: #F2EAE5;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }

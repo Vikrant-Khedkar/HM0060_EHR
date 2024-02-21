@@ -1,10 +1,13 @@
 .wholeCont {
+    position: relative;
     width: 99.5vw;
     min-height: 80vh;
     display: flex;
 }
 
 .rightCont {
+    position: relative;
+    left: 15%;
     padding: 0 2.5vh;
     width: 85%;
     height: 90vh;
@@ -167,6 +170,7 @@
 @media (max-width: 768px) {
     .rightCont {
         width: calc(100% - 12vh);
+        left: 12vh;
     }
     .eachMonthCont {
         width: 30vh;
@@ -178,6 +182,7 @@
 @media (max-width: 425px) {
     .rightCont {
         width: 100%;
+        left: 0;
     }
     .eachMonthCont {
         width: 45%;

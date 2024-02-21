@@ -46,7 +46,7 @@
 .rightTopMidCont {
     position: relative;
     width: 50%;
-    height: 7vh;
+    height: 6vh;
     background-color: #ffffff;
     border-radius: 25px;
     padding: 0 1vh;
@@ -160,6 +160,12 @@
 .rightTopRightImg {
     width: 6vh;
     height: 6vh;
+}
+
+@media (max-width: 1000px) {
+    .rightTopLeftText {
+        font-size: 1.5rem;
+    }
 }
 
 @media ( max-width: 768px) {

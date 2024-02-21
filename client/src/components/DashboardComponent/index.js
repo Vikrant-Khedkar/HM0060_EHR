@@ -17,7 +17,7 @@ export default function DashboardComponent () {
 
     const {user_address} = useSelector(store => store.metamaskLogin)
 
-    const [docs, setDocs] = useState([]);
+    const [docs, setDocs] = useState(['','','','','','','','','','','','','','','']);
     const [showFile, setShowFile] = useState(false);
     const [url, setUrl] = useState(null);
 
@@ -40,7 +40,7 @@ export default function DashboardComponent () {
     return (
         <div className={styles.wholeCont} >
             <Head>
-                <title>धरती - Records</title>
+                <title>धरती - Dashboard</title>
                 <link rel="profile image" href="/logoImg.png" />
                 <meta charset="UTF-8" />
                 <meta name="description" content="Patient records"/>
@@ -49,16 +49,19 @@ export default function DashboardComponent () {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             </Head>
             <DashboardLeftNavBar />
-            {
+            {/* {
             showFile && url && <div className={styles.modalCont} onClick={e => setShowFile(false)}>
                     <iframe src={url} className={styles.modalContent} onClick={e=> e.stopPropagation()}/>
                 </div>
-            }
+            } */}
             <div className={styles.rightCont} >
                 <DashboardTopNavBar pageTitle='Dashboard' pageTitleImg='dashboardIcon'/>
                 <div className={styles.rightBottomCont} >
                     <div className={styles.rightBottomLeftCont} >
-                        <p className={styles.nameText}>Hello {'John'}</p>
+                        <div className={styles.previewCont}>
+                            <iframe src={url} className={styles.modalContent} onClick={e=> e.stopPropagation()}/>
+                        </div>
+                        {/* <p className={styles.nameText}>Hello {'John'}</p> */}
                     </div>
                     <div className={styles.rightBottomRightCont} >
                         <div className={styles.rightBottomRightBottomCont} >
@@ -69,7 +72,9 @@ export default function DashboardComponent () {
                         {
                             docs?.map((eachDoc) => {
                                 return (
-                                    <div key={eachDoc} onClick = {e => {setUrl(eachDoc.file), setShowFile(true)}}  className={styles.eachDocCont}>
+                                    <div key={eachDoc} onClick = {e => {setUrl(eachDoc.file), setShowFile(true)}}  
+                                        className={`${styles.eachDocCont} ${styles.eachDocContSelected}`}
+                                    >
                                             <img src='/docIcon.png' alt={eachDoc.filename}
                                                 className={styles.eachDocImg}
                                             />

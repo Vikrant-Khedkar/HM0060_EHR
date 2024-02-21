@@ -1,4 +1,5 @@
 .wholeCont {
+    position: relative;
     width: 99.5vw;
     height: 100vh;
     display: flex;
@@ -22,6 +23,8 @@
 }
 
 .rightCont {
+    position: relative;
+    left: 15%;
     padding: 0 2.5vh;
     width: 85%;
     height: 100vh;
@@ -203,6 +206,7 @@
 @media (max-width: 768px) {
     .rightCont {
         width: calc(100% - 12vh);
+        left: 12vh;
     }
 }
 
@@ -232,6 +236,7 @@
 @media (max-width: 425px) {
     .rightCont {
         width: 100%;
+        left: 0;
     }
     .uploadButton {
         margin-bottom: 10vh;

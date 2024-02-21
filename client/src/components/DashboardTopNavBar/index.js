@@ -33,7 +33,7 @@ export default function DashboardTopNavBar ({pageTitle, pageTitleImg}) {
         <div className={styles.rightTopCont} >
             <div className={styles.rightTopLeftCont} >
                 <img className={styles.rightTopLeftImg} src={`/${pageTitleImg}.png`}/>
-                <button className={styles.rightTopLeftText}>{pageTitle}</button>
+                <p className={styles.rightTopLeftText}>{pageTitle}</p>
             </div>
             <div className={styles.rightTopMidCont} onClick={e => {searchInputRef.current.focus()}} >
                 <img className={styles.eachDashboardOptionIcon} src='/searchIcon.png'/>

@@ -6,10 +6,8 @@ import { useRouter } from 'next/router';
 
 export default function MyApp({ Component, pageProps }) {
 
-  const router = useRouter();
-  const {pathname} = router;
-
-  console.log(pathname);
+  // const router = useRouter();
+  // const {pathname} = router;
     
     return (
       <Provider store={store}>

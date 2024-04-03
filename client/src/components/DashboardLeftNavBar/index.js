@@ -44,6 +44,11 @@ export default function DashboardLeftNavBar() {
                     <img className={styles.eachDashboardOptionIcon} src={pathname.includes('/records') ? '/layerIcon.png' : '/layerIcon-white.png'}/>
                     <p className={`${styles.eachDashboardOptionText} ${pathname.includes('/records') ? styles.eachDashboardOptionTextSelected : ''}`}>Records</p>
                 </Link>
+                <Link className={`${styles.eachDashboardOption} ${pathname.includes('/psychology-assessment') ? styles.eachDashboardOptionSelected : ''}`} 
+                        href='/psychology-assessment'>
+                    <img className={styles.eachDashboardOptionIcon} src={pathname.includes('/psychology-assessment') ? '/assessmentIcon.png' : '/assessmentIcon-white.png'}/>
+                    <p className={`${styles.eachDashboardOptionText} ${pathname.includes('/psychology-assessment') ? styles.eachDashboardOptionTextSelected : ''}`}>Assessment</p>
+                </Link>
                 {/* <Link className={styles.eachDashboardOption} href='/dashboard'>
                     <img className={styles.eachDashboardOptionIcon} src='/graphIcon.png'/>
                     <p className={styles.eachDashboardOptionText}>Health Insights</p>

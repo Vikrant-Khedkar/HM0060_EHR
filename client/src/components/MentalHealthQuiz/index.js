@@ -202,7 +202,7 @@ export default function MentalHealthQuiz () {
                     <div className={`${styles.colorCont} ${res > 12 ? styles.red : res  >= 9 ? styles.orange : res > 5 ? styles.yellow : styles.green}`}>
                         {/* <p className={styles.res}>{res}</p> */}
                         <p className={`${styles.result}`}>{
-                        res >=13 ? 'Therapy needed' : res  >= 11 ? 'Counseling needed' : res > 6 ? 'You are ok' : 'Excellent mental health'
+                        res >=13 ? 'Therapy needed' : res  >= 11 ? 'Counseling needed' : res > 6 ? 'You are doing great!' : 'Excellent mental health'
                     }</p>
                     </div>
                     

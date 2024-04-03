@@ -20,8 +20,10 @@
 }
 .modalContent {
     width: 100%;
-    min-height: 40vh;
-    max-height: 100vh;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .previewCont {
@@ -201,7 +203,7 @@
     }
     .modalContent {
         min-height: 40vh;
-        width: auto;
+        width: 100%;
     }
     .rightBottomLeftCont {
         width: 100%;

@@ -17,7 +17,7 @@ export default function DashboardComponent () {
 
     const {user_address} = useSelector(store => store.metamaskLogin)
 
-    const [docs, setDocs] = useState(['','','','','','','','','','','','','','','']);
+    const [docs, setDocs] = useState([]);
     const [showFile, setShowFile] = useState(false);
     const [url, setUrl] = useState(null);
 
@@ -30,6 +30,7 @@ export default function DashboardComponent () {
         axios.post(fileURL,  {userAddress : user_address})
         .then(resp => {
             setDocs(resp.data.records);
+            setUrl(resp.data.records[resp.data.records.length -1 ].file);
             console.log(resp.data.records);
         })
         .catch(err => {
@@ -59,7 +60,7 @@ export default function DashboardComponent () {
                 <div className={styles.rightBottomCont} >
                     <div className={styles.rightBottomLeftCont} >
                         <div className={styles.previewCont}>
-                            <iframe src={url} className={styles.modalContent} onClick={e=> e.stopPropagation()}/>
+                            <iframe src={url} className={styles.modalContent}/>
                         </div>
                         {/* <p className={styles.nameText}>Hello {'John'}</p> */}
                     </div>

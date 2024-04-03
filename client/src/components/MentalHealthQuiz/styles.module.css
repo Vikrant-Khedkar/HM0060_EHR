@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .wholeCont {
+    position: relative;
     width: 99.85vw;
     height: 100vh;
     padding-left: 5%;
-    padding-top: 10vh;
     background-color: #F2EAE5;
 }
 
 .pageTitle {
+    position: relative;
+    left: 15%;
+    top: 10vh;
     font-size: 1.5rem;
     font-weight: 600;
     color: rgb(80, 80, 80);
@@ -17,9 +20,11 @@
 }
 
 .QuizCont {
-    width: 90%;
+    position: relative;
+    width: 85%;
     height: 60vh;
-    left: 0;
+    top: 10vh;
+    left: 15%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -149,7 +154,8 @@
 
 @media (max-width: 768px) {
     .QuizCont {
-        width: 100%;
+        width: calc(100% - 12vh);
+        left: 12vh;
     }
     .questionNumber {
         font-size: 1rem;
@@ -164,6 +170,10 @@
 }
 
 @media (max-width: 425px) {
+    .QuizCont {
+        width: 100%;
+        left: 0;
+    }
     .eachOption {
         width: 90%;
     }
